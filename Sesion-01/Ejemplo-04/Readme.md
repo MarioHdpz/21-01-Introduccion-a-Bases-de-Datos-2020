@@ -20,22 +20,24 @@
 
    ```sql
    SELECT *
-   FROM puesto
-   ORDER BY salario DESC;
+   FROM kavak.car
+   ORDER BY price DESC;
    ```
    
    ![imagen](imagenes/s1we41.png)
 
 2. Para ordenar de forma ascendente puede añadirse la opción `ASC` u omitirse, pues el ordenamiento por defecto es ascentende.
 
+NOTA: Mostrar que también se puede ordenar por más de un campo.
+
    ```sql
    SELECT *
-   FROM puesto
-   ORDER BY salario ASC;
+   FROM kavak.car
+   ORDER BY price ASC;
    
    SELECT *
-   FROM puesto
-   ORDER BY salario;
+   FROM kavak.car
+   ORDER BY price;
    ```
    
    ![imagen](imagenes/s1we42.png)
@@ -44,7 +46,7 @@
 
    ```sql
    SELECT *
-   FROM empleado
+   FROM kavak.make
    LIMIT 5;
    ```
  

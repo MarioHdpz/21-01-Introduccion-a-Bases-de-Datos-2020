@@ -14,19 +14,37 @@
 
 ### 3. Desarrollo :rocket:
 
-Usando la base de datos `tienda`, escribe una consulta que permita obtener el top 5 de puestos por salarios.
+
+Usando la base de datos `kavak`, escribe las consultas que permita responder las siguientes preguntas.
+
+1. ¿De que año es el auto más antiguo?
+1. ¿Cuál son los 3 autos con mayor kilometraje?
+1. ¿Cuál es el auto que lleva más tiempo sin venderse?
 
 <details><summary>Solución</summary>
 <p>
 
-Para contestar a esta pregunta, basta con ordenar las calificaciones del alumno en orden descendente y limitar el número de registros a 5.
+   ```sql
+   SELECT name, year
+   FROM car
+   ORDER BY year 
+   LIMIT 1;
+   ```
 
    ```sql
-   SELECT *
-   FROM puesto
-   ORDER BY salario DESC
-   LIMIT 5;
+   SELECT name, km
+   FROM car
+   ORDER BY km DESC
+   LIMIT 3;
    ```
+
+   ```sql
+   SELECT name, post_date
+   FROM car
+   ORDER BY post_date
+   LIMIT 1;
+   ```
+
 </p>
 </details> 
 
