@@ -45,28 +45,8 @@
    
    *Usando `FROM`*
    
-   Ahora queremos saber cuál es la menor y mayor cantidad de ventas de un artículo. Nuevamente, volvemos a descomponer el problema. Primero, obtengamos la cantidad de piezas por venta de un artículo. 
-
-   ```sql
-   SELECT clave, id_articulo, count(*) AS cantidad
-   FROM venta
-   GROUP BY clave, id_articulo
-   ORDER BY clave;
-   ```
-   
-   ![imagen](imagenes/s2we43.png)
-   
-   Ahora, sobre la tabla resultante hacemos un nuevo agrupamiento para obtener la cantidad mínima y máxima de cada artículo, sin importar la venta.
-   
-   ```sql
-   SELECT id_articulo, min(cantidad), max(cantidad)
-   FROM 
-      (SELECT clave, id_articulo, count(*) AS cantidad
-      FROM venta
-      GROUP BY clave, id_articulo
-      ORDER BY clave) AS subconsulta
-   GROUP BY id_articulo;
-   ```
+   Ahora queremos saber el id de los artículos más y menos vendidos.
+   # TODO: Add query
    
    ![imagen](imagenes/s2we44.png)
    
