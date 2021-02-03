@@ -14,12 +14,12 @@
 
 ### 3. Desarrollo :rocket:
 
-Usando la base de datos `tienda`, escribe consultas que permitan responder las siguientes preguntas.
+Usando la base de datos `kavak`, escribe consultas que permitan responder las siguientes preguntas.
 
-- ¿Cuál es el promedio de salario de los puestos?
-- ¿Cuántos artículos incluyen la palabra `Pasta` en su nombre?
-- ¿Cuál es el salario mínimo y máximo?
-- ¿Cuál es la suma del salario de los últimos cinco puestos agregados?
+- ¿Cuál es el promedio un auto en Kavak?
+- ¿Cuántos artículos según su nomre son de `1.6l`?
+- ¿Cuál es el precio mínimo y máximo de todos los autos?
+- ¿Cuál es la suma del precio de los tres autos más caros?
 
 <details><summary>Solución</summary>
 <p>
@@ -27,45 +27,47 @@ Usando la base de datos `tienda`, escribe consultas que permitan responder las s
 - ¿Cuál es el promedio de salario de los puestos?
 
    ```sql
-   SELECT avg(salario)
-   FROM puesto;
+   SELECT AVG(price)
+   FROM kavak.car;
    ```
    ![imagen](imagenes/s2wr21.png)
 
-- ¿Cuántos artículos incluyen la palabra `Pasta` en su nombre?
+- ¿Cuántos artículos según su nomre son de `1.6l`?
 
    ```sql
-   SELECT count(*)
-   FROM articulo
-   WHERE nombre LIKE '%pasta%';
+   SELECT COUNT(*)
+   FROM kavak.car
+   WHERE name LIKE '%1.6l%';
    ```
    ![imagen](imagenes/s2wr22.png)
    
-- ¿Cuál es el salario mínimo y máximo?
+- ¿Cuál es el precio mínimo y máximo de todos los autos?
 
    ```sql
-   SELECT min(salario), max(salario)
-   FROM puesto;
+   SELECT MIN(price), MAX(price)
+   FROM kavak.car;
    ```
    ![imagen](imagenes/s2wr23.png)
    
-- ¿Cuál es la suma del salario de los últimos cinco puestos agregados?
+- ¿Cuál es la suma del precio de los tres autos más caros?
 
-   Primero obtenemos el ídentificador que nos permite saber eso.
+   Primero obtenemos los ids de los autos
    
    ```sql
-   SELECT max(id_puesto) - 5
-   FROM puesto;
+   SELECT id
+   FROM kavak.car
+   ORDER BY price DESC
+   LIMIT 3;
    ```
    
    ![imagen](imagenes/s2wr24.png)
    
-   Usamos ese identificador ahora.
+   Usamos esos ids y los sumamos.
 
    ```sql
-   SELECT sum(salario)
-   FROM puesto
-   WHERE id_puesto >= 995;
+   SELECT sum(price)
+   FROM kavak.car
+   WHERE id IN (4167, 413, 4474);
    ```
    ![imagen](imagenes/s2wr25.png)
 
