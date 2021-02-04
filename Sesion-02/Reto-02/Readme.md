@@ -17,14 +17,14 @@
 Usando la base de datos `kavak`, escribe consultas que permitan responder las siguientes preguntas.
 
 - ¿Cuál es el precio promedio un auto en Kavak?
-- ¿Cuántos artículos según su nomre son de `1.6l`?
+- ¿Cuántos autos según su nombre son de `1.6l`?
 - ¿Cuál es el precio mínimo y máximo de todos los autos?
 - ¿Cuál es la suma del precio de los tres autos más caros?
 
 <details><summary>Solución</summary>
 <p>
 
-- ¿Cuál es el precio promedio de salario de los puestos?
+- ¿Cuál es el precio promedio un auto en Kavak?
 
    ```sql
    SELECT AVG(price)
@@ -32,7 +32,7 @@ Usando la base de datos `kavak`, escribe consultas que permitan responder las si
    ```
    ![imagen](imagenes/s2wr21.png)
 
-- ¿Cuántos artículos según su nomre son de `1.6l`?
+- ¿Cuántos autos según su nombre son de `1.6l`?
 
    ```sql
    SELECT COUNT(*)
