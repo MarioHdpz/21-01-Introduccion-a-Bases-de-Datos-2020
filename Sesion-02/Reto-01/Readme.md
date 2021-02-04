@@ -14,39 +14,39 @@
 
 ### 3. Desarrollo :rocket:
 
-Usando la base de datos `tienda`, escribe consultas que permitan responder las siguientes preguntas.
+Usando la base de datos `kavak`, escribe consultas que permitan responder las siguientes preguntas.
 
-- ¿Qué artículos incluyen la palabra `Pasta` en su nombre?
-- ¿Qué artículos incluyen la palabra `Cannelloni` en su nombre?
-- ¿Qué nombres están separados por un guión (`-`) por ejemplo `Puree - Kiwi`?
+- ¿Qué autos según su nombre son `4x4`?
+- ¿Cuáles son las marcas cuyo nombre inicia con la letra `A`?
+- ¿Qué modelos de auto tienen sólo 4 caracteres?
 
 <details><summary>Solución</summary>
 <p>
 
-- ¿Qué artículos incluyen la palabra `Pasta` en su nombre?
+- ¿Qué autos según su nombre son `4x4`?
 
    ```sql
    SELECT *
-   FROM articulo
-   WHERE nombre LIKE '%PASTA%';
+   FROM kavak.car
+   WHERE name LIKE '%4x4%';
    ```
    ![imagen](imagenes/s2wr11.png)
 
-- ¿Qué artículos incluyen la palabra `Cannelloni` en su nombre?
+- ¿Cuáles son las marcas cuyo nombre inicia con la letra `A`?
 
    ```sql
    SELECT *
-   FROM articulo
-   WHERE nombre LIKE '%Cannelloni%';
+   FROM kavak.make
+   WHERE name LIKE 'A%';
    ```
    ![imagen](imagenes/s2wr12.png)
    
-- ¿Qué nombres están separados por un guión (`-`) por ejemplo `Puree - Kiwi`?
+- ¿Qué modelos de auto tienen sólo 4 caracteres?
 
    ```sql
-   SELECT *
-   FROM articulo
-   WHERE nombre LIKE '% - %';
+   SELECT model
+   FROM kavak.car
+   WHERE model LIKE '____';
    ```
    ![imagen](imagenes/s2wr13.png) 
 

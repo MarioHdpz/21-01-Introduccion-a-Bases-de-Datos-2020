@@ -16,7 +16,7 @@
 
 Usando la base de datos `kavak`, escribe consultas que permitan responder las siguientes preguntas.
 
-- ¿Cuál es el promedio un auto en Kavak?
+- ¿Cuál es el precio promedio un auto en Kavak?
 - ¿Cuántos artículos según su nomre son de `1.6l`?
 - ¿Cuál es el precio mínimo y máximo de todos los autos?
 - ¿Cuál es la suma del precio de los tres autos más caros?
@@ -24,7 +24,7 @@ Usando la base de datos `kavak`, escribe consultas que permitan responder las si
 <details><summary>Solución</summary>
 <p>
 
-- ¿Cuál es el promedio de salario de los puestos?
+- ¿Cuál es el precio promedio de salario de los puestos?
 
    ```sql
    SELECT AVG(price)
