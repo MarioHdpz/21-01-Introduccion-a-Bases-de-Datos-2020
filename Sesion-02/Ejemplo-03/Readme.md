@@ -18,6 +18,17 @@
 
 2. Ahora revisaremos el concepto de agrupamiento. Para hacer un agrupamiento se usa la cláusula `GROUP BY` que recolecta datos de múltiples registros y los agrupa en una o más columnas. Veamos algunos ejemplos.
 
+   *Usando `COUNT`*
+
+   ```sql
+   SELECT nombre, count(*) AS cantidad
+   FROM articulo
+   GROUP BY nombre
+   ORDER BY cantidad DESC;
+   ```
+   
+   ![imagen](imagenes/s2we32.png)
+   
    *Usando `SUM`*
    
    Se añade un *alias* a la consulta para hacer más entendible el nombre de la columna. Para añadir un alias se debe usar la primitiva `AS`. Recuerda que los campos antes de las funciones de agregación son los que deben aparecer en la cláusula `GROUP BY`.
@@ -29,17 +40,6 @@
    ```
    
    ![imagen](imagenes/s2we31.png)
-   
-   *Usando `COUNT`*
-
-   ```sql
-   SELECT nombre, count(*) AS cantidad
-   FROM articulo
-   GROUP BY nombre
-   ORDER BY cantidad DESC;
-   ```
-   
-   ![imagen](imagenes/s2we32.png)
    
    *Usando `MIN` y `MAX`*
    

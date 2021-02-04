@@ -16,10 +16,9 @@
 
 Usando la base de datos `kavak`, escribe consultas que permitan responder las siguientes preguntas.
 
-- ¿Cuántos registros hay por cada uno de los modelos?
-- ¿Cuál es el valor total de los autos de Kavak?
-- ¿Cuál es el número de autos por año?
-- ¿Cuál es la relación de autos de transmisión manual vs automáticos?
+1. ¿Cuántos registros hay por cada uno de los modelos?
+1. ¿Cuál es el promedio de kilometraje de los autos dependiendo de su año?
+1. ¿Cuál son las 10 combinaciones de color - transmisión más comunes? (P.E. BLANCO - Automático)
 
 <details><summary>Solución</summary>
 <p>
@@ -27,22 +26,39 @@ Usando la base de datos `kavak`, escribe consultas que permitan responder las si
 - ¿Cuántos registros hay por cada uno de los modelos?
 
    ```sql
+   SELECT 
+   model,
+   COUNT(model) AS count
+   FROM kavak.car
+   GROUP BY model
+   ORDER BY count DESC;
    ```
+   ![imagen](imagenes/s2wr31.png)
 
-- ¿Cuál es el valor total de los autos de Kavak?
+- ¿Cuál es el promedio de kilometraje de los autos dependiendo de su año?
 
    ```sql
+   SELECT
+   year,
+   AVG(km) AS avg_km
+   FROM kavak.car
+   GROUP BY year;
    ```
+   ![imagen](imagenes/s2wr32.png)
    
-- ¿Cuál es el número de autos por año?
-
+- ¿Cuál son las 10 combinaciones de color - transmisión más comunes? (P.E. BLANCO - Automático)
+   
    ```sql
+   SELECT
+   color,
+   transmission,
+   COUNT(*) AS count
+   FROM kavak.car
+   GROUP BY color, transmission
+   ORDER BY count DESC
+   LIMIT 10;
    ```
-   
-- ¿Cuál es la relación de autos de transmisión manual vs automáticos?
-   
-   ```sql
-   ```
+   ![imagen](imagenes/s2wr34.png)
    
 
 </p>

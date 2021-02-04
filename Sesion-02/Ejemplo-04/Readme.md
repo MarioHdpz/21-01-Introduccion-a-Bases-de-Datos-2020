@@ -45,8 +45,18 @@
    
    *Usando `FROM`*
    
-   Ahora queremos saber el id de los artículos más y menos vendidos.
-   # TODO: Add query
+   Ahora queremos saber el promedio de ventas por artículo.
+   
+   ```sql
+   SELECT AVG(ventas) AS ventas_promedio_por_articulo
+   FROM
+      (SELECT
+      id_articulo,
+      COUNT(*) AS ventas
+      FROM tienda.venta
+      GROUP BY id_articulo) AS numero_de_ventas;
+
+   ```
    
    ![imagen](imagenes/s2we44.png)
    
