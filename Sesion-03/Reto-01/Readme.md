@@ -14,48 +14,53 @@
 
 ### 3. Desarrollo :rocket:
 
-Usando la base de datos `tienda`, escribe consultas que permitan responder las siguientes preguntas.
+Usando la base de datos `kavak`, escribe consultas que permitan responder las siguientes preguntas.
 
-- ¿Cuál es el nombre de los empleados que realizaron cada venta?
-- ¿Cuál es el nombre de los artículos que se han vendido?
-- ¿Cuál es el total de cada venta?
+- Muestra una tabla con el nombre y marca de cada auto
+- ¿Cuántos autos hay por cada una de las ciudades?
+- Muestra una tabla con el nombre, marca y tipo de carrocería (body_type) de cada auto
 
 <details><summary>Solución</summary>
 <p>
 
-- ¿Cuál es el nombre de los empleados que realizaron cada venta?
+- Muestra una tabla con el nombre y marca de cada auto
 
    ```sql
-   SELECT clave, nombre, apellido_paterno
-   FROM venta AS v
-   JOIN empleado AS e
-     ON v.id_empleado = e.id_empleado
-   ORDER BY clave;
+   SELECT 
+   car.name, 
+   make.name as make
+   FROM kavak.car 
+     JOIN
+       kavak.make 
+       ON car.make_id = make.id;
    ```
    
    ![imagen](imagenes/s3wr11.png)
 
-- ¿Cuál es el nombre de los artículos que se han vendido?
+- ¿Cuántos autos hay por cada una de las ciudades?
 
    ```sql
-   SELECT clave, nombre
-   FROM venta AS v
-   JOIN articulo AS a
-     ON v.id_articulo = a.id_articulo
-   ORDER BY clave;
+   SELECT 
+     region.name as region,
+     COUNT(*) as count
+   FROM kavak.car
+     JOIN kavak.region ON
+     region_id = region.id
+   GROUP BY region;
    ```
    
    ![imagen](imagenes/s3wr12.png)
    
-- ¿Cuál es el total de cada venta?
+- Muestra una tabla con el nombre, marca y tipo de carrocería (body_type) de cada auto
 
    ```sql
-   SELECT clave, round(sum(precio),2) AS total
-   FROM venta AS v
-   JOIN articulo AS a
-     ON v.id_articulo = a.id_articulo
-   GROUP BY clave
-   ORDER BY clave;
+   SELECT 
+     region.name as region,
+     COUNT(*) as count
+   FROM kavak.car
+     JOIN kavak.region ON
+     region_id = region.id
+   GROUP BY region;
    ```
    ![imagen](imagenes/s3wr13.png) 
 
