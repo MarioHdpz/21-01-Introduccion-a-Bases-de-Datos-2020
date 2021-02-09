@@ -6,7 +6,7 @@
 
 ### 1. Objetivos :dart:
 
-- Definir vistas sobre algunas consultas.
+- Crear una vista a partir de una consulta.
 
 ### 2. Requisitos :clipboard:
 
@@ -14,11 +14,9 @@
 
 ### 3. Desarrollo :rocket:
 
-Usando la base de datos `tienda`, define las siguientes vistas que permitan obtener la siguiente información.
-
-- Obtener el puesto de un empleado.
-- Saber qué artículos ha vendido cada empleado.
-- Saber qué puesto ha tenido más ventas.
+Usando la base de datos `kavak`, crea una vista que muestre las marcas y el número de autos que hay por cada una de ellas.
+Nómbrala como `<tus iniciales>_make_cars`.
+Haz una consulta sobre tu vista y obten la marca con mayor número de autos.
 
 <details><summary>Solución</summary>
 <p>
@@ -26,61 +24,23 @@ Usando la base de datos `tienda`, define las siguientes vistas que permitan obte
 - Obtener el puesto de un empleado.
 
    ```sql
-   CREATE VIEW puestos AS
-   SELECT concat(e.nombre, ' ', e.apellido_paterno), p.nombre
-   FROM empleado e
-   JOIN puesto p
-     ON e.id_puesto = p.id_puesto;
+  CREATE VIEW kavak.mahp_make_cars AS
+     SELECT
+     make.name AS name,
+     COUNT(*) AS count
+     FROM kavak.make
+       JOIN kavak.car ON
+       make.id = car.make_id
+     GROUP BY make.id;
    ```
    
    ```sql
    SELECT *
-   FROM puestos;
+   FROM kavak.mahp_make_cars
+   ORDER BY count DESC LIMIT 1;
    ```
    
    ![imagen](imagenes/s3wr21.png)
-
-- Saber qué artículos ha vendido cada empleado.
-
-   ```sql
-   CREATE VIEW empleado_articulo AS
-   SELECT v.clave, concat(e.nombre, ' ', e.apellido_paterno) nombre, a.nombre articulo
-   FROM venta v
-   JOIN empleado e
-     ON v.id_empleado = e.id_empleado
-   JOIN articulo a
-     ON v.id_articulo = a.id_articulo
-   ORDER BY v.clave;
-   ```
-   
-   ```sql
-   SELECT *
-   FROM  empleado_articulo;
-   ```
-   
-   ![imagen](imagenes/s3wr22.png)
-   
-- Saber qué puesto ha tenido más ventas.
-
-   ```sql
-   CREATE VIEW puesto_ventas AS
-   SELECT p.nombre, count(v.clave) total
-   FROM venta v
-   JOIN empleado e
-     ON v.id_empleado = e.id_empleado
-   JOIN puesto p
-     ON e.id_puesto = p.id_puesto
-   GROUP BY p.nombre;
-   ```
-   
-   ```sql
-   SELECT *
-   FROM puesto_ventas
-   ORDER BY total DESC
-   LIMIT 1;
-   ```
-   
-   ![imagen](imagenes/s3wr23.png) 
 
 </p>
 </details> 

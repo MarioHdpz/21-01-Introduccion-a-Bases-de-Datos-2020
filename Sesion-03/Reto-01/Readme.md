@@ -54,13 +54,15 @@ Usando la base de datos `kavak`, escribe consultas que permitan responder las si
 - Muestra una tabla con el nombre, marca y tipo de carrocería (body_type) de cada auto
 
    ```sql
-   SELECT 
-     region.name as region,
-     COUNT(*) as count
-   FROM kavak.car
-     JOIN kavak.region ON
-     region_id = region.id
-   GROUP BY region;
+   SELECT
+    car.name AS name,
+    make.name AS make,
+    body_type.name AS body_type
+  FROM kavak.car
+    JOIN kavak.make ON 
+    make_id = make.id
+    JOIN kavak.body_type ON
+    body_type_id = body_type.id;
    ```
    ![imagen](imagenes/s3wr13.png) 
 
