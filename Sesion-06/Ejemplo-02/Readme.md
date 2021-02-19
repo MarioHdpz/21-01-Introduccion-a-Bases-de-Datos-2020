@@ -1,6 +1,6 @@
 [`Introducción a Bases de Datos`](../../Readme.md) > [`Sesión 06`](../Readme.md) > `Ejemplo 2`
 
-## Ejemplo 2: Asociación de colecciones
+## Ejemplo 2: Asociación de colecciones y el stage unwind
 
 <div style="text-align: justify;">
 

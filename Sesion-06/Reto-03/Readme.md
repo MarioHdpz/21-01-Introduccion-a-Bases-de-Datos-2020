@@ -14,7 +14,7 @@
 
 ### 3. Desarrollo :rocket:
 
-1. Usando el *pipeline* que generaste en el Reto 2, genera la vista correspondiente.
+1. Usando alguno de los *pipelines* que generaste en el Reto 2, genera la vista correspondiente.
 
 2. Para finalizar, elimina todas las vistas que generaste durante esta sesión. En la siguiente sesión, aprenderás a tener tu propio servidor para generar tus propias vistas. :)
 

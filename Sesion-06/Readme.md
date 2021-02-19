@@ -36,7 +36,7 @@ Al igual que en __SQL__ en __MongoDB__ podemos realizar agrupamientos. Se realiz
 - [**`RETO 1`**](Reto-01/Readme.md)
 
 ---
-#### <ins>Asociación de colecciones</ins>
+#### <ins>Asociación de colecciones y el stage unwind</ins>
 <img src="imagenes/imagen2.jpg" align="right" height="200" width="300">
 
 De la misma forma en que __SQL__ incluye distintos tipos de *join*. En __MongoDB__ se tiene la operación `$lookup` que permite relacionar colecciones. Es una agregación y su sintaxis es la siguiente:

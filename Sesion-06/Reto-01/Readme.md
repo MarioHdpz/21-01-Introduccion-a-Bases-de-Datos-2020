@@ -14,7 +14,9 @@
 
 ### 3. Desarrollo :rocket:
 
-Con base en el ejemplo 1, modifica el agrupamiento para que muestre el costo promedio por habitación por país de las propiedades de tipo casa.
+- Muestra la relación promedio que hay entre la tarifa de limpieza y el precio de una propiedad.
+- Muestra el costo promedio por habitación por país de las propiedades de tipo casa.
+- Muestra el promedio del mínimo de noches para todas las propiedades.
 
 <details><summary>Solución</summary>
 <p>

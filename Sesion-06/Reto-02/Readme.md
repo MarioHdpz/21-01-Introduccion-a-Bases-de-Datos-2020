@@ -14,7 +14,8 @@
 
 ### 3. Desarrollo :rocket:
 
-Usando las colecciones `comments` y `users`, se requiere conocer el correo y contraseña de cada persona que realizó un comentario. Construye un pipeline que genere como resultado estos datos.
+- Usando las colecciones `comments` y `users`, se requiere conocer el correo y contraseña de cada persona que realizó un comentario. Construye un pipeline que genere como resultado estos datos.
+- Muestra los 3 ids de usuario (reviewers_id) que tengan más comentarios.
 
 **NO CIERES ESTE *PIPELINE* PUES LO USAREMOS MÁS ADELANTE**
 
