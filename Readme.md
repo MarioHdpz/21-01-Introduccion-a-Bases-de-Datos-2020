@@ -18,7 +18,7 @@ principal objetivo conocer los principales conceptos que ahondan las bases de da
  - [Sesión 4: Fundamentos de MongoDB](Sesion-04/Readme.md) 
  - [Sesión 5: Consultas en MongoDB](Sesion-05/Readme.md) 
  - [Sesión 6: Agregaciones](Sesion-06/Readme.md) 
- - [Sesión 7: Configuración de Bases de Datos Locales](Sesion-07/Readme.md) 
+ - [Sesión 7: Configuración de Bases de Datos en la nube](Sesion-07/Readme.md) 
  - [Sesión 8: *Query competition*](Sesion-08/Readme.md)  
  
  ### Bases de Datos  

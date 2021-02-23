@@ -1,14 +1,14 @@
 [`Introducción a Bases de Datos`](../Readme.md) > `Sesión 07`
 
-## Sesión 7: Configuración de Bases de Datos Locales
+## Sesión 7: Configuración de Bases de Datos en la nube
 
 <img src="../imagenes/pizarron.png" align="right" height="100" width="100" hspace="10">
 <div style="text-align: justify;">
 
 ### 1. Objetivos :dart: 
 
-- Instalar localmente un servidor de base de datos para MySQL.  
-- Instalar localmente un servidor de base de datos para MongoDB.  
+- Instalar en la nube un servidor de base de datos para MySQL.  
+- Instalar en la nube un servidor de base de datos para MongoDB.  
 
 
 ### 2. Contenido :blue_book:
